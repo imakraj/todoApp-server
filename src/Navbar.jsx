@@ -12,7 +12,7 @@ const Navbar = () => {
     };
 
     return (
-        <div className='w-screen h-12 bg-gray-800 text-white flex justify-between items-center px-5'>
+        <div className='fixed w-screen h-12 bg-gray-800 text-white flex justify-between items-center px-5'>
             <div>
                 <Link className="font-bold" to="/">ToDo</Link>
             </div>
