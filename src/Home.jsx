@@ -96,7 +96,7 @@ const Home = () => {
   }
 
   return (
-    <div className="flex items-center justify-center w-screen min-h-screen font-medium">
+    <div className="flex items-center justify-center w-screen min-h-screen pt-14 pb-12 font-medium">
       <div className="flex flex-grow items-center justify-center bg-gray-900 h-full">
         <div className="max-w-full p-8 bg-gray-800 rounded-lg shadow-lg max-w-xs text-gray-200">
           <div className="flex items-center mb-6">
