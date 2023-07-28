@@ -12,6 +12,7 @@ const corsOptions = {
   origin: [
     'http://localhost:3000',
     'http://127.0.0.1',
+    'https://todo-app-frontend-six-lilac.vercel.app'
   ],  
   methods: ['GET', 'POST', 'PATCH', 'DELETE'],
   credentials: true,

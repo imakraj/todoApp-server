@@ -80,7 +80,7 @@ const login = async (req, res) => {
 };
 
 const logout = async (req, res) => {
-    res.clearCookie("token", { path: '/', domain: 'localhost' });
+    res.clearCookie("token", { path: '/', domain: 'todo-app-frontend-six-lilac.vercel.app' });
     res.json({ message: 'Logout successful' });
 };
 
