@@ -5,6 +5,7 @@ import { Context } from './index';
 import { Navigate } from 'react-router-dom';
 import Loading from './Loading';
 import { toast } from 'react-toastify';
+import { Server } from './index';
 
 const Home = () => {
   const [tasks, setTasks] = useState([]);
@@ -29,7 +30,7 @@ const Home = () => {
 
   const getUser = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/api/users/user", {
+      const response = await axios.get(`${Server}/users/user`, {
         withCredentials: true
       });
 
@@ -44,7 +45,7 @@ const Home = () => {
 
   const getTasks = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/api/tasks", {
+      const response = await axios.get(`${Server}/tasks`, {
         withCredentials: true
       });
 
@@ -56,7 +57,7 @@ const Home = () => {
 
   const deleteTask = async (id) => {
     try {
-      const response = await axios.delete(`http://localhost:3001/api/tasks/${id}`, {
+      const response = await axios.delete(`${Server}/tasks/${id}`, {
         withCredentials: true,
       });
       const updatedTasks = tasks.filter(task => task._id !== response.data._id);
@@ -68,7 +69,7 @@ const Home = () => {
 
   const updateTask = async (id) => {
     try {
-      const response = await axios.patch(`http://localhost:3001/api/tasks/${id}`, {
+      const response = await axios.patch(`${Server}/tasks/${id}`, {
         isComplete: !tasks.find(task => task._id === id).isComplete
       }, {
         withCredentials: true

@@ -2,13 +2,14 @@ import React, { useContext } from 'react'
 import { Context } from './index.js';
 import axios from 'axios';
 import {toast} from 'react-toastify';
+import { Server } from './index.js';
 
 
 const Logout = () => {
     const { setIsAuthenticated, setUser } = useContext(Context);
     const logout = async () => {
         try {
-            const response = await axios.get("http://localhost:3001/api/users/logout",
+            const response = await axios.get(`${Server}/users/logout`,
                 { withCredentials: true });
 
             setIsAuthenticated(false);

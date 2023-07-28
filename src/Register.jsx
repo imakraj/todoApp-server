@@ -3,6 +3,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { Context } from '.';
 import { Navigate } from 'react-router-dom';
+import { Server } from '.';
 
 const Register = () => {
     const [name, setName] = useState('');
@@ -14,7 +15,7 @@ const Register = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post("http://localhost:3001/api/users/register", {
+            const response = await axios.post(`${Server}/users/register`, {
                 name,
                 email,
                 password

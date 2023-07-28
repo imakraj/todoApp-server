@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Context } from './index';
 import { Navigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { Server } from './index';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -13,7 +14,7 @@ const Login = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post("http://localhost:3001/api/users/login", {
+            const response = await axios.post(`${Server}/users/login`, {
                 email,
                 password
             }, { withCredentials: true });
