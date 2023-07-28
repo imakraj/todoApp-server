@@ -7,7 +7,7 @@ const getTasks = async (req, res) => {
         const tasks = await Task.find({user});
         res.status(200).json(tasks);
     } catch (err) {
-        res.status(500).json(err.message);
+        res.status(500).json({message: err.message});
     }
 }
 
